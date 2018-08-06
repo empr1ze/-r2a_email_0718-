@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+      @media screen and (max-width: 400px) {
+        .h1 {
+          font-size: 22px;
+        }
+        .two-column .column, .three-column .column {
+          max-width: 100% !important;
+        }
+        .two-column img {
+          width: 100% !important;
+        }
+        .three-column img {
+          max-width: 60% !important;
+        }
+      }
+      @media screen and (min-width: 401px) and (max-width: 400px) {
+        .two-column .column {
+          max-width: 50% !important;
+        }
+        .three-column .column {
+          max-width: 33% !important;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        img.logo {
+          float: none !important;
+          margin-left: 0% !important;
+          max-width: 220px !important;
+        }
+        #callout {
+          float: none !important;
+          margin: 0% 0% 0% 0;
+          height: auto;
+          text-align: center;
+          overflow: hidden;
+        }
+        #callout img {
+          max-width: 26px !important;
+        }
+        .two-column .section {
+          width: 100% !important;
+          max-width: 100% !important;
+          display: inline-block;
+          vertical-align: top;
+        }
+        .two-column img {
+          width: 100% !important;
+          height: auto !important;
+        }
+        img.img-responsive {
+          width: 100% !important;
+          height: auto !important;
+          max-width: 100% !important;
+        }
+        .content {
+          width: 100% !important;
+          padding-top: 0px !important;
+        }
+      }
+
+      body {
+        margin: 0 !important;
+        padding: 15px;
+        background-color: #fff;
+      }
+      .wrapper {
+        width: 100%;
+        table-layout: fixed;
+      }
+      .wrapper-inner {
+        width: 100%;
+        background-color: #000;
+        max-width: 670px;
+        margin: 0 auto;
+      }
+      table {
+        border-spacing: 0;
+        font-family: sans-serif;
+        color: #727F80;
+      }
+      .outer-table {
+        width: 100%;
+        max-width: 670px;
+        margin: 0 auto;
+        background-color: #000;
+      }
+      td {
+        padding: 0;
+      }
+      .header {
+        background-color: #C2C1C1;
+        border-bottom: 3px solid #8189C3;
+      }
+      p {
+        /*margin: 0;*/
+      }
+      .header p {
+        text-align: center;
+        padding: 1%;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      a {
+        color: skyblue;
+        text-decoration: none;
+      }
+      /*-- Start Logo and Social Media Section --*/
+      .main-table-first {
+        width: 100%;
+        max-width: 610px;
+        margin: 0 auto;
+        background-color: #000;
+        border-radius: 6px;
+        margin-top: 25px;
+      }
+      .two-column {
+        text-align: justify;
+        padding: 5px 0 10px 0;
+      }
+      .two-column .section {
+        width: 100%;
+        max-width: 300px;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .inner-td {
+        padding: 10px;
+      }
+      .content {
+        width: 100%;
+        padding-top: 20px;
+
+      }
+      .center {
+        display: table;
+        margin: 0 auto;
+      }
+      img {
+        border: 0;
+      }
+      img.logo {
+        float: left;
+        margin-left: 5%;
+        max-width: 250px !important;
+      }
+
+      #callout img {
+        max-width: 30px;
+      }
+      .social {
+        list-style-type: none;
+        margin-top: 1%;
+        padding-top: 20px;
+      }
+      .social li {
+        display: inline-block;
+        padding-left: 10px;
+      }
+      .social li img {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      /*-- Start Banner Image, Text & Button Section --*/
+      .image img {
+        width: 100%;
+        max-width: 670px;
+        height: auto;
+      }
+      .main-table {
+        width: 100%;
+        max-width: 610px;
+        margin: 0 auto;
+        background-color: #FFF;
+        border-radius: 6px;
+      }
+      .one-column .inner-td {
+        font-size: 16px;
+        line-height: 20px;
+        text-align: justify;
+
+      }
+      .h2 {
+        text-align: center;
+        font-size: 23px;
+        font-weight: 600;
+        line-height: 45px;
+        margin: 12px;
+        color: #4A4A4A;
+      }
+      p.center {
+        text-align: center;
+        max-width: 580px;
+        line-height: 24px;
+      }
+      .button-holder-center {
+        text-align: center;
+        margin: 5% 0 3% 0;
+      }
+      .btn {
+        background: #81BAC6;
+        font-size: 15px;
+        font-weight: 600;
+        color: #000;
+        padding: 9px 16px;
+        border-radius: 28px;
+      }
+      /*-- Start Two Column Image & Text Section --*/
+      .two-column img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+      }
+      .two-column .text {
+        padding: 10px 0;
+      }
+      /*-- Start Three Column Section --*/
+      .inner-td-heading {
+        text-align: center;
+        background: #fff;
+        padding: 9px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .outer-table-2 {
+        width: 100%;
+        max-width: 670px;
+        margin: 22px auto;
+        background-color: #C2C1C1;
+        border-top: 3px solid #81B9C3;
+        border-bottom: 3px solid #81B9C3;
+      }
+      .three-column {
+        text-align: center;
+        padding: 10px 0 30px 0;
+      }
+      .three-column .section {
+        width: 100%;
+        max-width: 200px;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .three-column img {
+        width: 100%;
+        max-width: 125px;
+        height: auto;
+      }
+      .three-column .content {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      .outer-table-2 p {
+        margin-top: 6px;
+        color: #000;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 23px;
+      }
+      /*-- Start Two Column Article Secion --*/
+      .h3 {
+        text-align: center;
+        font-size: 21px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #4A4A4A;
+
+      }
+      /*-- Start Bottom One Column Section --*/
+      .inner-bottom {
+        padding: 22px;
+      }
+      .h1 {
+        text-align: center;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 45px;
+        margin: 12px 0 20px 0;
+        color: #4A4A4A;
+      }
+      .inner-bottom p.bottom {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: justify;
+      }
+      .button-holder {
+        float: right;
+        margin: 5% 0 3# 0;
+      }
+
+      /* Footer */
+      .outer-table-3 {
+        width: 100%;
+        max-width: 670px;
+        margin: 22px auto;
+        background-color: #C2C1C1;
+        border-top: 3px solid #81B9C3;
+      }
+      .footer {
+        width: 100%;
+        background-color: #000;
+        margin: 0 auto;
+        color: #fff;
+      }
+      .footer img {
+        max-width: 250px;
+        margin: 0 auto;
+        display: block;
+        padding: 4% 0 2% 0;
+      }
+      p.footer {
+        text-align: center;
+        line-height: 30px;
+        text-transform: uppercase;
+        padding-bottom: 4%;
+      }
+    </style>
+  </head>
+
+  <body style="padding: 15px;background-color: #fff;margin: 0 !important;">
+    <div class="wrapper" style="width: 100%;table-layout: fixed;">
+      <div class="wrapper-inner" style="width: 100%;background-color: #000;max-width: 670px;margin: 0 auto;">
+        <!--table class="outer-table">
+          <tr>
+            <td class="header">
+              <p><a href="#">Click to view this email in your browser.</a></p>
+            </td>
+          </tr>
+        </table> <!-- end outer table -->
+        <table class="main-table-first" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;max-width: 610px;margin: 0 auto;background-color: #000;border-radius: 6px;margin-top: 25px;">
+          <tr>
+            <td class="two-column" style="padding: 5px 0 10px 0;text-align: justify;">
+              <div class="section" style="width: 100%;max-width: 300px;display: inline-block;vertical-align: top;">
+                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                  <tr>
+                    <td class="inner-td" style="padding: 10px;">
+                      <table class="content" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;padding-top: 20px;">
+                        <tr>
+                          <td align="center" style="padding: 0;">
+                            <img src="img/logo.jpg" class="logo" style="border: 0;width: 100%;height: auto;max-width: 250px !important;float: left;margin-left: 5%;">
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div><!-- end first of two columns-->
+              <div class="section" style="width: 100%;max-width: 300px;display: inline-block;vertical-align: top;">
+                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                  <tr>
+                    <td class="inner-td" style="padding: 10px;">
+                      <table class="content" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;padding-top: 20px;">
+                        <tr>
+                          <td style="padding: 0;">
+                            <div id="callout" style="margin: 0% 0% 0% 0;height: auto;text-align: center;overflow: hidden;float: none !important;">
+                              <ul class="social" style="list-style-type: none;margin-top: 1%;padding-top: 20px;">
+                                <li style="display: inline-block;padding-left: 10px;"><a href="https://www.facebook.com/" style="color: skyblue;text-decoration: none;"><img src="img/facebook.png" alt="" style="border: 0;width: 100%;height: auto;max-width: 30px;margin-bottom: 0;padding-bottom: 0;"></a></li>
+                                <li style="display: inline-block;padding-left: 10px;"><a href="https://www.twitter.com/" style="color: skyblue;text-decoration: none;"><img src="img/twitter.png" alt="" style="border: 0;width: 100%;height: auto;max-width: 30px;margin-bottom: 0;padding-bottom: 0;"></a></li>
+                                <li style="display: inline-block;padding-left: 10px;"><a href="https://www.racetoapex.com/" style="color: skyblue;text-decoration: none;"><img src="img/wordpress.png" alt="" style="border: 0;width: 100%;height: auto;max-width: 30px;margin-bottom: 0;padding-bottom: 0;"></a></li>
+                                <li style="display: inline-block;padding-left: 10px;"><a href="https://www.instagram.com/racetoapex" style="color: skyblue;text-decoration: none;"><img src="img/instagram.png" alt="" style="border: 0;width: 100%;height: auto;max-width: 30px;margin-bottom: 0;padding-bottom: 0;"></a></li>
+                                <li style="display: inline-block;padding-left: 10px;"><a href="https://www.youtube.com//racetoapex" style="color: skyblue;text-decoration: none;"><img src="img/youtube.png" alt="" style="border: 0;width: 100%;height: auto;max-width: 30px;margin-bottom: 0;padding-bottom: 0;"></a></li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div><!-- end second of two columns-->
+            </td>
+          </tr>
+        </table>  <!--end main table first -->
+        <table class="outer-table" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;max-width: 670px;margin: 0 auto;background-color: #000;">
+          <tr>
+            <td class="image" style="padding: 0;">
+              <a href="https://racetoapex.com/2018/07/13/dont-be-tricked-3-diet-foods-that-arent-really-diet-foods/" style="color: skyblue;text-decoration: none;"><img src="img/background1.png" alt="" style="border: 0;width: 100%;max-width: 670px;height: auto;"></a>
+            </td>
+          </tr>
+        </table> <!-- End Banner Image -->
+        <table class="main-table" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;max-width: 610px;margin: 0 auto;background-color: #FFF;border-radius: 6px;">
+          <tr>
+            <td class="one-column" style="padding: 0;">
+              <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                <tr>
+                  <td class="inner-td" style="padding: 10px;font-size: 16px;line-height: 20px;text-align: justify;">
+                    <p class="h2" style="text-align: center;font-size: 23px;font-weight: 600;line-height: 45px;margin: 12px;color: #4A4A4A;">July Newsletter</p>
+                    <p class="center" style="display: table;margin: 0 auto;text-align: center;max-width: 580px;line-height: 24px;">Thousands across the globe are popping up left and right, filled with newfound self-esteem because they lost unwanted fat by following a simple, scientifically proven method…and you can hear their raving testimonials here for free.</p>
+                    <p class="button-holder-center" style="text-align: center;margin: 5% 0 3% 0;">
+                      <a class="btn" href="http://emprize.2weekdiet.hop.clickbank.net/" style="color: #000;text-decoration: none;background: #81BAC6;font-size: 15px;font-weight: 600;padding: 9px 16px;border-radius: 28px;">Learn More</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr> <!-- End Heading, Paragraph, & Button Section -->
+          <tr>
+            <td class="two-column" style="padding: 5px 0 10px 0;text-align: justify;">
+              <div class="section" style="width: 100%;max-width: 300px;display: inline-block;vertical-align: top;">
+                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                  <tr>
+                    <td class="inner-td" style="padding: 10px;">
+                      <table class="content" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;padding-top: 20px;">
+                        <tr>
+                          <td style="padding: 0;">
+                            <img src="img/banner1.jpg" class="img-responsive" style="border: 0;width: 100% !important;height: auto !important;max-width: 100% !important;">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text" style="padding: 10px 0;">
+                            <p>Even celebrities like Selena Gomez have tried the 2 Week Diet. She gives some well deserved credit to this fast, convenient, safe weight loss system.</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div><!-- end first of two columns-->
+              <div class="section" style="width: 100%;max-width: 300px;display: inline-block;vertical-align: top;">
+                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                  <tr>
+                    <td class="inner-td" style="padding: 10px;">
+                      <table class="content" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;padding-top: 20px;">
+                        <tr>
+                          <td style="padding: 0;">
+                            <img src="img/banner2.jpeg" class="img-responsive" style="border: 0;width: 100% !important;height: auto !important;max-width: 100% !important;">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text" style="padding: 10px 0;">
+                            <p>This diet program is not only making people drop 1-2 pounds of stubborn body fat DAILY...it’s also responsible for numerous people dropping 2-3 dress sizes, 2-4 inches off their waist, having flatter stomachs, and losing fat off their hips, thighs, and butt within 14 days.</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div> <!-- End Second Column of Two Columns -->
+            </td>
+          </tr> <!-- End Two Column Section -->
+          <tr>
+            <td style="padding: 0;">
+              <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                <tr>
+                  <td align="center" class="inner-td" style="padding: 10px;">
+                    See what all the buzz is about here >> <a class="btn" href="http://emprize.2weekdiet.hop.clickbank.net/" style="color: #000;text-decoration: none;background: #81BAC6;font-size: 15px;font-weight: 600;padding: 9px 16px;border-radius: 28px;">Learn More</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table> <!-- End Main table -->
+        <table class="outer-table-2" style="background-color: #C2C1C1;border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;max-width: 670px;margin: 22px auto;border-top: 3px solid #81B9C3;border-bottom: 3px solid #81B9C3;">
+          <tr>
+            <td class="inner-td-heading" style="padding: 9px;text-align: center;background: #fff;font-size: 15px;font-weight: 600;">
+              You may also like...
+            </td>
+          </tr>
+          <tr>
+            <td class="three-column" style="padding: 10px 0 30px 0;text-align: center;">
+              <div class="section" style="width: 100%;max-width: 200px;display: inline-block;vertical-align: top;">
+                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                  <tr>
+                    <td class="inner-td" style="padding: 10px;">
+                      <table class="content" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;padding-top: 20px;font-size: 16px;line-height: 20px;">
+                        <tr>
+                          <td style="padding: 0;">
+                            <a href="https://racetoapex.com/2018/01/04/how-elon-musk-became-rich/" style="color: skyblue;text-decoration: none;"><img src="img/post2.png" alt="" style="border: 0;max-width: 125px;width: 100%;height: auto;"></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text" style="padding: 0;">
+                            <p style="margin-top: 6px;color: #000;font-size: 18px;font-weight: 500;line-height: 23px;">How Elon Musk Became Rich</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div> <!-- end first column of 3 -->
+              <div class="section" style="width: 100%;max-width: 200px;display: inline-block;vertical-align: top;">
+                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                  <tr>
+                    <td class="inner-td" style="padding: 10px;">
+                      <table class="content" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;padding-top: 20px;font-size: 16px;line-height: 20px;">
+                        <tr>
+                          <td style="padding: 0;">
+                            <a href="https://racetoapex.com/2018/01/12/the-alpha-commandments-part-1-get-rich-fast-beat-laziness-and-be-invincible/" style="color: skyblue;text-decoration: none;"><img src="img/post1.png" alt="" style="border: 0;max-width: 125px;width: 100%;height: auto;"></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text" style="padding: 0;">
+                            <p style="margin-top: 6px;color: #000;font-size: 18px;font-weight: 500;line-height: 23px;">Get Rich Fast, Beat Laziness, and Be Invincible</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div> <!-- end second column of 3 -->
+              <div class="section" style="width: 100%;max-width: 200px;display: inline-block;vertical-align: top;">
+                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                  <tr>
+                    <td class="inner-td" style="padding: 10px;">
+                      <table class="content" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;padding-top: 20px;font-size: 16px;line-height: 20px;">
+                        <tr>
+                          <td style="padding: 0;">
+                            <a href="https://racetoapex.com/2018/05/14/digital-era-amongst-the-worlds-most-intelligent-and-wealthiest/" style="color: skyblue;text-decoration: none;"><img src="img/post3.png" alt="" style="border: 0;max-width: 125px;width: 100%;height: auto;"></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text" style="padding: 0;">
+                            <p style="margin-top: 6px;color: #000;font-size: 18px;font-weight: 500;line-height: 23px;">Digital Era: Amongst the World's Most Intelligent and Wealthiest</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div> <!-- end third column of 3 -->
+            </td> <!-- End Three Column Section -->
+          </tr>
+        </table> <!-- End Outer Table 2 -->
+        <table class="main-table" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;max-width: 610px;margin: 0 auto;background-color: #FFF;border-radius: 6px;">
+          <tr>
+            <td class="two-column" style="padding: 5px 0 10px 0;text-align: justify;">
+              <div class="section" style="width: 100%;max-width: 300px;display: inline-block;vertical-align: top;">
+                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                  <tr>
+                    <td class="inner-td" style="padding: 10px;">
+                      <table class="content" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;padding-top: 20px;">
+                        <tr>
+                          <td style="padding: 0;">
+                            <img src="img/last2.jpeg" alt="" style="border: 0;width: 100%;height: auto;max-width: 280px;">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text" style="padding: 10px 0;">
+                            <p class="h3" style="text-align: center;font-size: 21px;font-weight: 600;margin-bottom: 8px;color: #4A4A4A;">Cut Out the Wishing</p>
+                            <p>Here's the deal: millions upon millions of people in the world sit around wishing, hoping, or praying for a better way to lose fat, tone up, and achieve the body they've always wanted.</p><p> They try diet after diet, workout after workout, sadly with only minimal or temporary results to show for it.</p>
+
+                            <br>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div> <!-- End First of Two Columns -->
+              <div class="section" style="width: 100%;max-width: 300px;display: inline-block;vertical-align: top;">
+                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                  <tr>
+                    <td class="inner-td" style="padding: 10px;">
+                      <table class="content" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;padding-top: 20px;">
+                        <tr>
+                          <td class="text" style="padding: 10px 0;">
+                            <p class="h3" style="text-align: center;font-size: 21px;font-weight: 600;margin-bottom: 8px;color: #4A4A4A;">Dream it, Do it</p>
+                            <p>Fortunately, The 2 Week Diet is different: it’s real, it’s proven, it’s safe, and the results are PERMANENT. (No magic pills or grueling workouts required.) </p>   <p>If you suffer from low self-esteem about your body or if you want to improve your attractiveness and health, then there are some things you should consider…</p>
+
+                            <br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding: 0;">
+                            <img src="img/last1.jpeg" alt="" style="border: 0;width: 100%;height: auto;max-width: 280px;">
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div> <!-- End Second of Two Columns -->
+            </td>
+          </tr>
+          <tr>
+            <td class="one-column" style="padding: 0;">
+              <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                <tr>
+                  <td class="inner-bottom" style="padding: 22px;">
+                    <p class="h1" style="text-align: center;font-size: 25px;font-weight: 600;line-height: 45px;margin: 12px 0 20px 0;color: #4A4A4A;">
+                      Reach the Apex
+                    </p>
+                    <p>Will you be stuck in the same rut in a year? What about 5 years from now? Will you suffer with obesity, high cholesterol, or low self-esteem for your entire life? Every day your eyes catch some dreamy boy or smoking hot girl. Isn’t it time that they took notice of you as well? </p>
+                    <p>Watch the short, complimentary video right here, right now, by clicking on "Learn More".</p>
+                    <div class="button-holder" style="float: right;margin: 5% 0 3# 0;">
+                      <a href="http://emprize.2weekdiet.hop.clickbank.net/" class="btn" style="color: #000;text-decoration: none;background: #81BAC6;font-size: 15px;font-weight: 600;padding: 9px 16px;border-radius: 28px;">Learn More</a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table> <!-- End Main table -->
+        <table class="outer-table-3" style="border-spacing: 0;font-family: sans-serif;color: #727F80;width: 100%;max-width: 670px;margin: 22px auto;background-color: #C2C1C1;border-top: 3px solid #81B9C3;">
+          <tr>
+            <td class="one-column" style="padding: 0;">
+              <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #727F80;">
+                <tr>
+                  <td class="footer" style="padding: 0;width: 100%;background-color: #000;margin: 0 auto;color: #fff;">
+                    <img src="img/logo.jpg" alt="" style="border: 0;max-width: 250px;margin: 0 auto;display: block;padding: 4% 0 2% 0;">
+                    <p class="footer" style="width: 100%;background-color: #000;margin: 0 auto;color: #fff;text-align: center;line-height: 30px;text-transform: uppercase;padding-bottom: 4%;"><a href="mailto:duke@racetoapex.com" style="color: skyblue;text-decoration: none;">Contact Us</a></p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table> <!-- End Outer Table -->
+      </div> <!-- End Wrapper Inner -->
+    </div>    <!-- End Wrapper -->
+  </body>
+</html>
